@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="db_pegawaiModelStoreContainer" CdmEntityContainer="db_pegawaiEntities1">
+    <EntitySetMapping Name="tbl_pegawai">
+      <EntityTypeMapping TypeName="db_pegawaiModel.tbl_pegawai">
+        <MappingFragment StoreEntitySet="tbl_pegawai">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAMA" ColumnName="NAMA" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+          <ScalarProperty Name="NIP" ColumnName="NIP" />
+          <ScalarProperty Name="HOBY" ColumnName="HOBY" />
+          <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

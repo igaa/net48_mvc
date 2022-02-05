@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_pegawaiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'db_pegawai.dbo.tbl_pegawai' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbl_pegawai">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="NAMA" Type="varchar" MaxLength="225" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="225" />
+    <Property Name="GENDER" Type="int" />
+    <Property Name="NIP" Type="varchar" MaxLength="50" />
+    <Property Name="HOBY" Type="int" />
+    <Property Name="PHOTO" Type="varbinary(max)" />
+  </EntityType>
+  <EntityContainer Name="db_pegawaiModelStoreContainer">
+    <EntitySet Name="tbl_pegawai" EntityType="Self.tbl_pegawai" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[tbl_pegawai].[ID] AS [ID], 
+[tbl_pegawai].[NAMA] AS [NAMA], 
+[tbl_pegawai].[EMAIL] AS [EMAIL], 
+[tbl_pegawai].[GENDER] AS [GENDER], 
+[tbl_pegawai].[NIP] AS [NIP], 
+[tbl_pegawai].[HOBY] AS [HOBY], 
+[tbl_pegawai].[PHOTO] AS [PHOTO]
+FROM [dbo].[tbl_pegawai] AS [tbl_pegawai]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

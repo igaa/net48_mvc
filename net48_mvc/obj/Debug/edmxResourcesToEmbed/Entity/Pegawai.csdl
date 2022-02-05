@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_pegawaiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tbl_pegawai">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="NAMA" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+    <Property Name="GENDER" Type="Int32" />
+    <Property Name="NIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HOBY" Type="Int32" />
+    <Property Name="PHOTO" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityContainer Name="db_pegawaiEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_pegawai" EntityType="Self.tbl_pegawai" />
+  </EntityContainer>
+</Schema>
