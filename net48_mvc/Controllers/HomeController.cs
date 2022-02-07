@@ -56,6 +56,23 @@ namespace net48_mvc.Controllers
                 model = r.pegawai_tbl.Where(x => x.ID == id).FirstOrDefault();
             }
 
+            List<SelectListItem> lstHoby = new List<SelectListItem>()
+            {
+                new SelectListItem
+                {
+                    Text = "1. Sepak Bola",
+                    Value = "1"
+                }, new SelectListItem
+                {
+                    Text = "2. Voli",
+                    Value = "2"
+                }, new SelectListItem
+                {
+                    Text = "3. Tenis Meja ",
+                    Value = "3"
+                }
+            }; 
+
             return View(model);
         }
 

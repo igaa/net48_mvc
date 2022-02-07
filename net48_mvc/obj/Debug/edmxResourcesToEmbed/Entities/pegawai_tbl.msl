@@ -10,7 +10,6 @@
           <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
           <ScalarProperty Name="GENDER" ColumnName="GENDER" />
           <ScalarProperty Name="HOBY" ColumnName="HOBY" />
-          <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

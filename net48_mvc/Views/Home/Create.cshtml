@@ -34,15 +34,20 @@
         <div class="form-group">
             @Html.LabelFor(model => model.GENDER, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.GENDER, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.GENDER, "", new { @class = "text-danger" })
+                @Html.RadioButtonFor(model => model.GENDER, "1")
+                Male
+                @Html.RadioButtonFor(model => model.GENDER, "2")
+                Female
+                @Html.ValidationMessageFor(model => model.GENDER, "", new { @class = "text-danger" })*
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.HOBY, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.HOBY, new { htmlAttributes = new { @class = "form-control" } })
+                
+                @Html.DropDownListFor(model=> model.HOBY, new List<SelectListItem> { new SelectListItem{Text = "Choose One" },  new SelectListItem { Value = "1", Text = "1. Sepak Bola" }, new SelectListItem { Value = "2", Text = "2. Voli" }, new SelectListItem { Value = "3", Text = "3. Tenis Meja" } }, new { @class = "form-control" })
+    
                 @Html.ValidationMessageFor(model => model.HOBY, "", new { @class = "text-danger" })
             </div>
         </div>

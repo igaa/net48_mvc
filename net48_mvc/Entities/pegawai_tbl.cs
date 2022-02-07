@@ -11,15 +11,21 @@ namespace net48_mvc.Entities
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class pegawai_tbl
     {
+        [Required]
         public System.Guid ID { get; set; }
+        [Required]
         public string NAMA { get; set; }
+        [Required]
         public string EMAIL { get; set; }
+        [Required]
         public Nullable<int> GENDER { get; set; }
+        [Required]
         public Nullable<int> HOBY { get; set; }
-        public byte[] PHOTO { get; set; }
+        [Required]
         public string NIP { get; set; }
     }
 }

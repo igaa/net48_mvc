@@ -9,7 +9,6 @@
     <Property Name="EMAIL" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
     <Property Name="GENDER" Type="Int32" />
     <Property Name="HOBY" Type="Int32" />
-    <Property Name="PHOTO" Type="Binary" MaxLength="Max" FixedLength="false" />
     <Property Name="NIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityContainer Name="DBContextPegawai" annotation:LazyLoadingEnabled="true">

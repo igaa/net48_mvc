@@ -1,5 +1,6 @@
 ﻿@model net48_mvc.Entities.pegawai_tbl
 
+
 @{
     ViewBag.Title = "Update";
 }
@@ -36,7 +37,26 @@
         <div class="form-group">
             @Html.LabelFor(model => model.GENDER, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.GENDER, new { htmlAttributes = new { @class = "form-control" } })
+                @if (Model.GENDER == 1)
+                {
+                <div>
+
+                    @Html.RadioButtonFor(model => model.GENDER, "1", new { Checked = true })
+                    Male
+                    @Html.RadioButtonFor(model => model.GENDER, "2")
+                    Female
+                </div>
+
+                }
+                else if (Model.GENDER == 2)
+                {
+                <div>
+                    Male
+                    @Html.RadioButtonFor(model => model.GENDER, "1")
+                    Female
+                    @Html.RadioButtonFor(model => model.GENDER, "2", new { Checked = true})
+                </div>
+                }
                 @Html.ValidationMessageFor(model => model.GENDER, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -44,7 +64,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.HOBY, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.HOBY, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.HOBY, new List<SelectListItem> { new SelectListItem { Text = "Pilih" },  new SelectListItem { Value = "1", Text = "1. Sepak Bola", Selected = Model.HOBY == 1 ? true : false }, new SelectListItem { Value = "2", Text = "2. Voli", Selected = Model.HOBY == 2 ? true : false }, new SelectListItem { Value = "3", Text = "3. Tenis Meja", Selected = Model.HOBY == 3 ? true : false } }, new { @class = "form-control" })
+                @* @Html.EditorFor(model => model.HOBY, new { htmlAttributes = new { @class = "form-control" } })*@
                 @Html.ValidationMessageFor(model => model.HOBY, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -66,6 +87,8 @@
 }
 
 <div>
+    
+    @Html.ActionLink("Upload Photo", "Upload", "UploadFile", new { id = Model.ID }, new { id = Model.ID }) |
     @Html.ActionLink("Back to List", "Index")
 </div>
 
