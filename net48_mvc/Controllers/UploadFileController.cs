@@ -27,12 +27,24 @@ namespace net48_mvc.Controllers
                     {
                
                         string path = Path.Combine(Server.MapPath("~/Uploaded"),id.ToString()+".jpg");
-                        if (System.IO.File.Exists(path))
-                        {
-                            System.IO.File.Delete(path); 
-                        }
 
-                        file.SaveAs(path);
+                        var filesize = new System.IO.FileInfo(path).Length;
+
+                        var Tokb = filesize / 1024; 
+
+                        if (Tokb <=  1024)
+                        {
+                            if (System.IO.File.Exists(path))
+                            {
+                                System.IO.File.Delete(path);
+                            }
+
+                            file.SaveAs(path);
+                        }
+                        else
+                        {
+                            ViewBag.FileStatus = "File can't more than 1 MB.";
+                        }
                     }
                     ViewBag.FileStatus = "File uploaded successfully.";
                 }
@@ -42,7 +54,6 @@ namespace net48_mvc.Controllers
                 }
             }
             return RedirectToAction("Details", "Home", new { id = id}); 
-            //return View("Upload");
 
         }
 
